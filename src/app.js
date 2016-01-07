@@ -9,8 +9,8 @@ var ajax = require('ajax');
 
 
 var ntTitle = new UI.Card({
-  title: 'Neues Testament',
-  subtitle: 'Error',
+  title: 'Error',
+  subtitle: 'Neues Testament',
   body: '',
   titleColor: 'blue',
   fullscreen: true,
@@ -19,8 +19,8 @@ var ntTitle = new UI.Card({
 });
 
 var atTitle = new UI.Card({
-  title: 'Altes Testament',
-  subtitle: 'Error',
+  title: 'Error',
+  subtitle: 'Altes Testament',
   body: '',
   titleColor: 'blue',
   fullscreen: true,
@@ -43,9 +43,9 @@ ajax(
     type: 'json'
   },
   function(data, status, request) {
-    ntTitle.subtitle(data.ntverse);
+    ntTitle.title(data.ntverse);
     ntTitle.body(data.nttext + "\n\n");
-    atTitle.subtitle(data.atverse);
+    atTitle.title(data.atverse);
     atTitle.body(data.attext + "\n\n");
     
     splash.hide();
